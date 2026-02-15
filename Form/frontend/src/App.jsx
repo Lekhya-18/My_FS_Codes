@@ -15,7 +15,7 @@ function App() {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await axios.post("https://mybackend.loca.lt", form);
+    await axios.post("http://localhost:5000/submit", form);
     alert("Life Vision Saved!");
   };
 
