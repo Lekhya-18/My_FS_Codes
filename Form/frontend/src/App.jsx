@@ -14,10 +14,15 @@ function App() {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    await axios.post("https://mybackend.loca.lt/submit", form);
+  e.preventDefault();
+  try {
+    await axios.post("https://lifeform-backend.onrender.com/submit", form);
     alert("Life Vision Saved!");
-  };
+  } catch (error) {
+    alert("Error saving data");
+  }
+};
+
 
   return (
     <>
